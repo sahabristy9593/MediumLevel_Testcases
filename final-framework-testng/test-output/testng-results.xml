@@ -1,23 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="1" failed="0" ignored="0" total="1" passed="0">
+<testng-results ignored="0" total="1" passed="0" failed="0" skipped="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="561" started-at="2018-12-17T19:55:39Z" finished-at="2018-12-17T19:55:40Z">
+  <suite started-at="2018-12-18T08:44:52Z" name="Default suite" finished-at="2018-12-18T08:44:53Z" duration-ms="1435">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="561" started-at="2018-12-17T19:55:39Z" finished-at="2018-12-17T19:55:40Z">
-      <class name="com.training.regression.tests.LoginExcelTest">
-        <test-method status="PASS" signature="setUpBeforeClass()[pri:0, instance:com.training.regression.tests.LoginExcelTest@cc285f4]" name="setUpBeforeClass" is-config="true" duration-ms="13" started-at="2018-12-18T01:25:39Z" finished-at="2018-12-18T01:25:39Z">
+    <test started-at="2018-12-18T08:44:52Z" name="Default test" finished-at="2018-12-18T08:44:53Z" duration-ms="1435">
+      <class name="com.training.regression.tests.LoginDBTest">
+        <test-method is-config="true" signature="setUpBeforeClass()[pri:0, instance:com.training.regression.tests.LoginDBTest@6ad82709]" started-at="2018-12-18T14:14:52Z" name="setUpBeforeClass" finished-at="2018-12-18T14:14:52Z" duration-ms="15" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpBeforeClass -->
-        <test-method status="SKIP" signature="loginDBTest(java.lang.String, java.lang.String)[pri:0, instance:com.training.regression.tests.LoginExcelTest@cc285f4]" name="loginDBTest" duration-ms="0" started-at="2018-12-18T01:25:40Z" data-provider="excel-inputs" finished-at="2018-12-18T01:25:40Z">
+        <test-method signature="loginDBTest(java.lang.String, java.lang.String)[pri:0, instance:com.training.regression.tests.LoginDBTest@6ad82709]" started-at="2018-12-18T14:14:53Z" name="loginDBTest" data-provider="db-inputs" finished-at="2018-12-18T14:14:53Z" duration-ms="0" status="SKIP">
           <exception class="java.lang.RuntimeException">
             <message>
-              <![CDATA[java.lang.IndexOutOfBoundsException: Index: 0, Size: 0]]>
+              <![CDATA[java.lang.NullPointerException]]>
             </message>
             <full-stacktrace>
-              <![CDATA[java.lang.RuntimeException: java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
+              <![CDATA[java.lang.RuntimeException: java.lang.NullPointerException
 	at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:49)
 	at org.testng.internal.MethodInvocationHelper.invokeDataProvider(MethodInvocationHelper.java:115)
 	at org.testng.internal.Parameters.handleParameters(Parameters.java:509)
@@ -41,14 +41,13 @@
 	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:114)
 	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
-	at java.util.ArrayList.rangeCheck(Unknown Source)
-	at java.util.ArrayList.get(Unknown Source)
-	at com.training.dataproviders.LoginDataProviders.getExcelData(LoginDataProviders.java:45)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
+Caused by: java.lang.NullPointerException
+	at com.training.dao.ELearningDAO.getLogins(ELearningDAO.java:35)
+	at com.training.dataproviders.LoginDataProviders.getDBData(LoginDataProviders.java:16)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:55)
 	at org.testng.internal.MethodInvocationHelper.invokeMethodNoCheckedException(MethodInvocationHelper.java:45)
@@ -59,7 +58,7 @@ Caused by: java.lang.IndexOutOfBoundsException: Index: 0, Size: 0
           <reporter-output>
           </reporter-output>
         </test-method> <!-- loginDBTest -->
-      </class> <!-- com.training.regression.tests.LoginExcelTest -->
+      </class> <!-- com.training.regression.tests.LoginDBTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
