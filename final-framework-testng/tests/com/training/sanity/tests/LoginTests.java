@@ -34,7 +34,7 @@ public class LoginTests {
 	public void setUp() throws Exception {
 		driver = DriverFactory.getDriver(DriverNames.CHROME);
 		loginPOM = new LoginPOM(driver); 
-		baseUrl = properties.getProperty("baseURL");
+		baseUrl = properties.getProperty("retail.hommelle.com");
 		screenShot = new ScreenShot(driver); 
 		// open the browser 
 		driver.get(baseUrl);
@@ -45,11 +45,31 @@ public class LoginTests {
 		Thread.sleep(1000);
 		driver.quit();
 	}
-	@Test
-	public void validLoginTest() {
-		loginPOM.sendUserName("admin");
-		loginPOM.sendPassword("admin@123");
-		loginPOM.clickLoginBtn(); 
-		screenShot.captureScreenShot("First");
+	/**@Test(priority=1)
+	*loginPOM.sendUserName("admin");
+		*loginPOM.sendPassword("admin@123");
+		*loginPOM.clickLoginBtn(); 
+		*screenShot.captureScreenShot("First");
+	*}
+	*/
+	
+	@Test(priority=2)
+	public void changePassword() {
+		loginPOM.resetPassword();
+	}
+	
+	@Test(priority=4)
+	public void choose_ethnic_from_list() {
+		loginPOM.ethnic_select();
+	}
+	
+	@Test(priority=3)
+	public void removefromcart() {
+		loginPOM.ethnic_select();
+		loginPOM.integerVitaeLaculisMassa();
+		loginPOM.addtocartbtn();
+		loginPOM.carticon();
+		loginPOM.viewCart();
+		screenShot.captureScreenShot("Third_Test");
 	}
 }
