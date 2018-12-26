@@ -6,10 +6,11 @@
       <class name="com.training.sanity.tests.LoginTests">
         <methods>
           <include name="setUpBeforeClass"/>
+          <include name="choose_ethnic_from_list"/>
           <include name="changePassword"/>
+          <include name="removefromcart"/>
           <include name="setUp"/>
           <include name="tearDown"/>
-          <include name="validLoginTest"/>
         </methods>
       </class> <!-- com.training.sanity.tests.LoginTests -->
     </classes>

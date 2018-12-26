@@ -57,12 +57,7 @@ public class LoginTests {
 	public void changePassword() {
 		loginPOM.resetPassword();
 	}
-	
-	@Test(priority=4)
-	public void choose_ethnic_from_list() {
-		loginPOM.ethnic_select();
-	}
-	
+
 	@Test(priority=3)
 	public void removefromcart() {
 		loginPOM.ethnic_select();
@@ -72,4 +67,11 @@ public class LoginTests {
 		loginPOM.viewCart();
 		screenShot.captureScreenShot("Third_Test");
 	}
+	
+	@Test(priority=4)
+	public void choose_ethnic_from_list() {
+		loginPOM.ethnic_select();
+	}
+	
+
 }
